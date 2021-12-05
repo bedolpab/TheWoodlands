@@ -1,0 +1,165 @@
+﻿<Page x:Class="TheWoodlands.GameHome"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="569" d:DesignWidth="775"
+      Title="GameHome">
+
+  <!-- Main home page grid-->
+  <Grid x:Name="GameHomePageGrid" Background="#111111">
+
+    <!--Define grid columns-->
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.8*"/>
+      <ColumnDefinition Width="0.2*"/>
+    </Grid.ColumnDefinitions>
+
+    <!--Background properties-->
+    <Rectangle Grid.Column="0" Fill="#111111"/>
+    <Rectangle Grid.Column="1" Fill="#A2BDA4"/>
+
+    <!--Right side menu section-->
+    <!--Image of avatar-->
+    <Image x:Name="SpriteImage" Source="{x:Null}" Grid.Column="1" Width="121" Height="229" Margin="17, 24, 15, 271"/>
+
+    <!--Player name-->
+    <TextBlock x:Name="UserName" Grid.Column="1" Foreground="#000000" FontWeight="Bold" FontFamily="Arial" FontSize="17" Margin="10,290,10,234" Text="{x:Null}" TextAlignment="Center" TextWrapping="Wrap"/>
+
+    <!--Locations button-->
+    <Button x:Name="LocationsBtn" Click="LocationBtn_Click" Grid.Column="1" Background="#111111" Foreground="#FAFAFA" FontFamily="Arial" FontSize="17" Width="109" Height="39" Margin="21, 329, 23, 159" Content="Locations">
+      <Button.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="15"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="10" BlurRadius="8"/>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+
+    <!--Inventory button-->
+    <Button x:Name="InventoryBtn" Click="InventoryBtn_Click" Grid.Column="1" Background="#111111" Foreground="#FAFAFA" FontFamily="Arial" FontSize="17" Width="109" Height="39" Margin="21, 371, 23, 114" Content="Inventory">
+      <Button.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="15"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="10" BlurRadius="8"/>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+    <!--Settings button -->
+    <Button x:Name="SettingsBtn" Click="SettingsBtn_Click" Grid.Column="1" Background="#111111" Foreground="#FAFAFA" FontFamily="Arial" FontSize="17" Width="109" Height="39" Margin="21, 416, 23, 69" Content="Settings">
+      <Button.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="15"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="10" BlurRadius="8"/>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+    <!--Map button-->
+    <Button x:Name="MapBtn" Click="MapBtn_Click" Grid.Column="1" Background="#111111" Foreground="#FFFFFF" FontFamily="Arial" FontSize="17" Width="109" Height="39" Margin="21, 461, 23, 24" Content="Map">
+      <Button.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="15"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="Black" Opacity="10" BlurRadius="8"/>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+    <!--Left side menu section-->
+    <!--Location name, description, and image -->
+    <TextBlock x:Name="LocationName" Grid.Column="0" Foreground="#FAFAFA" FontFamily="Arial" FontSize="25" Height="30" Margin="43,115,70,424" Text="{x:Null}"/>
+    <TextBlock x:Name="LocationDescription" Grid.Column="0" Foreground="#FAFAFA" FontFamily="Arial" FontSize="17" Height="84" Margin="43,153,42,332" Text="{x:Null}" TextWrapping="Wrap"/>
+    <Image x:Name="LocationImage" Source="{x:Null}" Height="239" Margin="43,247,199,83" />
+
+    <!--Task list deisgn-->
+    <Rectangle x:Name="TaskListRectangleBoxBody"  Stroke="#FAFAFA"  Width="156" Height="239" Margin="438, 247, 26, 83"/>
+    <Rectangle x:Name="TaskListRectangleBoxHead" Fill="#A2BDA4"  Width="156" Height="34" Margin="438, 245, 26, 292"/>
+
+    <!--Task list content -->
+    <TextBlock x:Name="TaskListTitle" Foreground="#111111" FontFamily="Arial" FontSize="17" Height="20" Margin="444,252,31,297" Text="Task List" TextAlignment="Center"/>
+    <TextBlock x:Name="Task0" Foreground="#FAFAFA"  FontFamily="Arial" FontSize="13" Width="154" Margin="444,284,22,249" Text="{x:Null}" TextWrapping="Wrap"/>
+    <TextBlock x:Name="Task1" Foreground="#FAFAFA"  FontFamily="Arial" FontSize="13" Width="154" Margin="444,308,22,246" Text="{x:Null}" TextWrapping="Wrap"/>
+    <TextBlock x:Name="Task2" Foreground="#FAFAFA"  FontFamily="Arial" FontSize="13" Width="154" Margin="444,337,22,214" Text="{x:Null}" TextWrapping="Wrap"/>
+    <TextBlock x:Name="Task3" Foreground="#FAFAFA"  FontFamily="Arial" FontSize="13" Width="154" Margin="444,364,22,189" Text="{x:Null}" TextWrapping="Wrap"/>
+    <TextBlock x:Name="Task4"  Foreground="#FAFAFA"  FontFamily="Arial" FontSize="13" Width="154" Margin="444,394,22,153" Text="{x:Null}" TextWrapping="Wrap"/>
+    <TextBlock x:Name="Task5"  Foreground="#FAFAFA"  FontFamily="Arial" FontSize="13" Width="154" Margin="444,421,22,116" Text="{x:Null}" TextWrapping="Wrap"/>
+
+    <!--View location items button-->
+    <Button x:Name="ViewItemsBtn" Click="ViewItemsBtn_Click" Grid.Column="0" Visibility="Collapsed" Background="#A2BDA4" Foreground="#111111" FontFamily="Arial" FontSize="17" Width="183" Height="39" Margin="43,491,394,39">View Items
+      <Button.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="10"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="White" Opacity="10" BlurRadius="20"/>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+    <!--Interact with NPC button-->
+    <Button x:Name="ViewNPCBtn" Click="ViewNPCBtn_Click" Grid.Column="0" Visibility="Collapsed" Background="#A2BDA4" Foreground="#111111" FontFamily="Arial" FontSize="17" Width="183" Height="39" Margin="238,491,199,39">Interact With Local
+      <Button.Resources>
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="10"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="White" Opacity="10" BlurRadius="20"/>
+                </Setter.Value>
+              </Setter>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+  </Grid>
+</Page>

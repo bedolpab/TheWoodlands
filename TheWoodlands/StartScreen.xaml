@@ -1,0 +1,40 @@
+﻿<Page x:Class="TheWoodlands.StartScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="569" d:DesignWidth="775"
+      Title="StartScreen">
+
+  <!-- Main start page grid-->
+  <Grid x:Name="StartPageGrid" Background="#111111">
+
+    <!--Title, subtitle, and credits-->
+    <TextBlock x:Name="PageTitle" Foreground="#A2BDA4" FontFamily="Arial" FontSize="47" Width="329" Height="54" Margin="213, 205, 223, 310" Text="{x:Null}" TextAlignment="Center"/>
+    <TextBlock x:Name="Subtitle" Foreground="#A2BDA4" FontFamily="Arial" FontSize="17" Width="113" Height="20" Margin="331,253,321,289" Text="{x:Null}" TextAlignment="Center"/>
+    <TextBlock x:Name="Creators" Foreground="#FAFAFA" FontFamily="Arial" FontSize="13" Width="317" Height="15" Margin="229, 285, 229, 269" Text="{x:Null}" TextAlignment="Center"/>
+
+    <!--Start button deisgn-->
+    <Button x:Name="StartBtn" Click="StartBtn_Click" Background="#A2BDA4" Foreground="#000000" FontFamily="Arial" FontSize="13" FontWeight="DemiBold" Width="134" Height="29" Margin="320, 338, 321, 202" Content="Start">
+      <Button.Resources>
+        <!--Makes button border round-->
+        <Style TargetType="Border">
+          <Setter Property="CornerRadius" Value="5"/>
+          <!--Dropshadow effect when mouse is hovered over button-->
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Effect">
+                <Setter.Value>
+                  <DropShadowEffect ShadowDepth="0" Color="#FAFAFA" Opacity="1" BlurRadius="20"/>
+                </Setter.Value>
+              </Setter>
+              <Setter Property="Opacity" Value="0.8"/>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </Button.Resources>
+    </Button>
+
+  </Grid>
+</Page>
