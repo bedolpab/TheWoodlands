@@ -55,13 +55,15 @@ namespace TheWoodlands
     /// <param name="skinTone">Sprite skin tone</param>
     private void DeclareSpriteSkinTone(int skinTone)
     {
+      // Declare the skin tone as choosen.
+      MainWindow.game.Avatars[skinTone].SkinToneIsChoosen = true;
+
       // Create new URI to load an image. Assign element "AvatarImage"'s
       // source to new URI. 
       SpriteImage.Source = new BitmapImage(new Uri(MainWindow.game.Avatars[skinTone].SourceForSkinToneImage, UriKind.Relative));
       Avatar.Source = SpriteImage.Source;
 
-      // Declare the skin tone as choosen.
-      MainWindow.game.Avatars[skinTone].SkinToneIsChoosen = true;
+      
     }
 
     // All skin tone radio button Click events.

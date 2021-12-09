@@ -129,9 +129,13 @@ namespace TheWoodlands
           RadioButtonIsChecked = true;
           break;
         }
+
         // If no radio button is checked.
-        else if (!OneRadioButtonIsChecked)
+        else
         {
+          // REMOVED THE ADDTIONAL STAMENT HERE HELP FROM EMRE BIBEROGLU
+
+
           WarningMessage.Text = "Please select a clothing color";
           WarningMessage.Visibility = Visibility.Visible;
 
