@@ -81,7 +81,7 @@ namespace TheWoodlands
         }
 
       };
-      Avatar DeepSkinTone = new Avatar()
+      Avatar AvatarVariation5 = new Avatar()
       {
         SkinTone = "Deep",
         SkinToneIsChoosen = null,
@@ -100,7 +100,7 @@ namespace TheWoodlands
       Avatars.Add(AvatarVariation2);
       Avatars.Add(AvatarVariation3);
       Avatars.Add(AvatarVariation4);
-      Avatars.Add(DeepSkinTone);
+      Avatars.Add(AvatarVariation5);
 
       Items Ammunition = new Items()
       {

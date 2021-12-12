@@ -21,14 +21,22 @@ namespace TheWoodlands
     {
       InitializeComponent();
       LoadPageContent();
-      DisplayRadioButtonContent();
       ShowChoosenSkinTone();
+      DisplayRadioButtonContent();
     }
 
     private void LoadPageContent()
     {
       PageTitle.Text = "Customize";
       RadioButtonsTitle.Text = "Clothing";
+    }
+
+    /// <summary>
+    /// Displays choosen skin tone image.
+    /// </summary>
+    public void ShowChoosenSkinTone()
+    {
+      SpriteImage.Source = Avatar.Source;
     }
 
     /// <summary>
@@ -48,13 +56,6 @@ namespace TheWoodlands
       }
     }
 
-    /// <summary>
-    /// Displays choosen skin tone image.
-    /// </summary>
-    public void ShowChoosenSkinTone()
-    {
-      SpriteImage.Source = Avatar.Source;
-    }
 
     /// <summary>
     /// Sets clothing color according to sprite skin tone selected.
@@ -89,6 +90,8 @@ namespace TheWoodlands
       }
     }
 
+    
+
     // All clothing color radio button click events.
     private void ClothingColor0_Checked(object sender, RoutedEventArgs e)
     {
@@ -110,6 +113,7 @@ namespace TheWoodlands
     {
       ApplySpriteClothingColor(4);
     }
+
 
     private void ContinueBtn_Click(object sender, RoutedEventArgs e)
     {
@@ -133,9 +137,6 @@ namespace TheWoodlands
         // If no radio button is checked.
         else
         {
-          // REMOVED THE ADDTIONAL STAMENT HERE HELP FROM EMRE BIBEROGLU
-
-
           WarningMessage.Text = "Please select a clothing color";
           WarningMessage.Visibility = Visibility.Visible;
 

@@ -55,6 +55,7 @@ namespace TheWoodlands
     /// <param name="skinTone">Sprite skin tone</param>
     private void DeclareSpriteSkinTone(int skinTone)
     {
+
       // Declare the skin tone as choosen.
       MainWindow.game.Avatars[skinTone].SkinToneIsChoosen = true;
 
@@ -63,7 +64,33 @@ namespace TheWoodlands
       SpriteImage.Source = new BitmapImage(new Uri(MainWindow.game.Avatars[skinTone].SourceForSkinToneImage, UriKind.Relative));
       Avatar.Source = SpriteImage.Source;
 
-      
+    }
+
+    /// <summary>
+    /// Declares which radio button for what skin tone was choosen.
+    /// </summary>
+    private void SetChoosenSkinTone()
+    {
+      // Iterate while "i" is less than length of sprite variations list...
+      for (int i = 0; i < MainWindow.game.Avatars.Count; i++)
+      {
+        // Find the name property "SkinTone0, SkinTone1," accordingly to
+        // sprite skin tone array length.
+        RadioButton radioButton = FindName($"SkinTone{i}") as RadioButton;
+
+        // If the radio button's valued is checked and 
+        // the skin tone associated with it has been choosen, leave as is.
+        if ((bool)radioButton.IsChecked && MainWindow.game.Avatars[i].SkinToneIsChoosen == true)
+        {
+          return;
+        }
+        // If the radio button's value is false but was previously checked,
+        // declare that the skin tone associated with it was not choosen.
+        else if ((bool)radioButton.IsChecked == false)
+        {
+          MainWindow.game.Avatars[i].SkinToneIsChoosen = false;
+        }
+      }
     }
 
     // All skin tone radio button Click events.
@@ -90,6 +117,8 @@ namespace TheWoodlands
 
     private void ContinueBtn_Click(object sender, RoutedEventArgs e)
     {
+      // Declares which radio button for what skin tone was choosen.
+      SetChoosenSkinTone();
       // Make sure that one radio button is checked before moving on.
       OneRadioButtonIsChecked = SkinTone0.IsChecked == true || SkinTone1.IsChecked == true || SkinTone2.IsChecked == true || SkinTone3.IsChecked == true || SkinTone4.IsChecked == true;
       do
@@ -107,7 +136,7 @@ namespace TheWoodlands
         }
 
         // If no radio button is checked.
-        else if (!OneRadioButtonIsChecked)
+        else
         {
           WarningMessage.Text = "Please select a skin tone";
           WarningMessage.Visibility = Visibility.Visible;
