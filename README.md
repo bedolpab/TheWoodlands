@@ -1,5 +1,5 @@
 # TheWoodlands
-"The Woodlands: Nuclear Winter" is a post-apocalyptic, WPF, 2D object-oriented programming game using C# and XAML. It was a final project developed for my *PROG 101 "Introduction to Programming"* course at *Columbia College Chicago*. The summary of the game goes:
+"The Woodlands: Nuclear Winter" is a post-apocalyptic, WPF, 2D object-oriented programming game using C# and XAML. It was a final project developed for my *PROG 101 "Programming I"* course at *Columbia College Chicago*. The summary of the game goes:
 >After a series of events between powerful nations, war broke out. Weapons of mass destruction (WMD) were used, and many died. Luckily, your current location was not a target. Unfortunately, nuclear winter awaits, and you must prepare. Gather supplies to survive.
 
 ---
@@ -72,7 +72,7 @@ All images (e.g. locations, item, sprite, NPC, icon images...) were created by m
 
 ---
 ### Credits
-*  Assistance received by my Professor *Emre Biberoglu* from PROG 101 "Introduction to Programming" in creating *DisplayInventoryItems()* method contents in *Inventory.xaml.cs* and in understanding how to dynamically program my project.
+*  Assistance received by my Professor *Emre Biberoglu* from PROG 101 "Programming I" in creating *DisplayInventoryItems()* method contents in *Inventory.xaml.cs* and in understanding how to dynamically program my project.
 
 *  Helped me create *YesOrNoMessageBox()* method in Utilities.cs: [Stackoverflow Answer](https://www.c-sharpcorner.com/uploadfile/mahesh/understanding-message-box-in-windows-forms-using-C-Sharp/)
 
